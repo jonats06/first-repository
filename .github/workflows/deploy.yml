@@ -1,1 +1,5 @@
-workflow_dispatch
+run on push to main and on manual workflow_dispatch;
+set permissions to id-token: write and contents: read;
+set DOCKER_IMAGE_TAG: 'dev-${{ github.sha }}';
+check out the code, set up Node, run npm ci, then run npm run build;
+finish with the Maersk-Global/mdp-website-deploy@v2
